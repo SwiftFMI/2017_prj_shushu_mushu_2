@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		55D538CDE9D48ECC056F92E1 /* Pods_shushu_mushu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86709A4D922F6DF413EAB3F5 /* Pods_shushu_mushu.framework */; };
+		8572821A203E0ACC0003D4E8 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85728219203E0ACC0003D4E8 /* UIViewController+Helper.swift */; };
+		8572821C203E0BBB0003D4E8 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8572821B203E0BBB0003D4E8 /* UIColor+Helper.swift */; };
 		8F7708C4E04E8A531521C72B /* Pods_shushu_mushuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6734D0277F25C506EF8F9C95 /* Pods_shushu_mushuUITests.framework */; };
 		AD03AADD20343B9900528798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD03AADC20343B9900528798 /* Assets.xcassets */; };
 		AD03AADF20345F4A00528798 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03AADE20345F4A00528798 /* SignInViewController.swift */; };
@@ -53,6 +55,8 @@
 		2D7B292082AE9B992BA4CC84 /* Pods-shushu-mushu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shushu-mushu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shushu-mushu/Pods-shushu-mushu.debug.xcconfig"; sourceTree = "<group>"; };
 		2FC5375E1C91878C055CE3C9 /* Pods-shushu-mushuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shushu-mushuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shushu-mushuUITests/Pods-shushu-mushuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6734D0277F25C506EF8F9C95 /* Pods_shushu_mushuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shushu_mushuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85728219203E0ACC0003D4E8 /* UIViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
+		8572821B203E0BBB0003D4E8 /* UIColor+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		86709A4D922F6DF413EAB3F5 /* Pods_shushu_mushu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shushu_mushu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A96ACCF1B6CB3C6C2FD490 /* Pods-shushu-mushuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shushu-mushuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shushu-mushuTests/Pods-shushu-mushuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD03AADC20343B9900528798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		85728218203E0AB40003D4E8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				85728219203E0ACC0003D4E8 /* UIViewController+Helper.swift */,
+				8572821B203E0BBB0003D4E8 /* UIColor+Helper.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AD77D483203300B0005453A8 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 		AD77D48E203300B1005453A8 /* shushu-mushu */ = {
 			isa = PBXGroup;
 			children = (
+				85728218203E0AB40003D4E8 /* Extensions */,
 				AD9D7F11203C5FB3005827E8 /* Models */,
 				ADF3FBFF20346F4C00E4D46A /* shushu-mushu.entitlements */,
 				AD77D48F203300B1005453A8 /* AppDelegate.swift */,
@@ -546,9 +560,11 @@
 				AD9D7F15203C5FFD005827E8 /* User.swift in Sources */,
 				AD4F27522036F27B001DF611 /* ProfileViewController.swift in Sources */,
 				AD77D492203300B1005453A8 /* ViewController.swift in Sources */,
+				8572821A203E0ACC0003D4E8 /* UIViewController+Helper.swift in Sources */,
 				AD03AAE12034610E00528798 /* SignUpWithPhoneViewController.swift in Sources */,
 				AD4F2758203B10AA001DF611 /* Extensions.swift in Sources */,
 				AD77D490203300B1005453A8 /* AppDelegate.swift in Sources */,
+				8572821C203E0BBB0003D4E8 /* UIColor+Helper.swift in Sources */,
 				AD9D7F0D203C59C9005827E8 /* AllUsersViewController.swift in Sources */,
 				AD9D7F09203C3B69005827E8 /* ContactsViewController.swift in Sources */,
 				AD9D7F18203CD0B5005827E8 /* UserCell.swift in Sources */,

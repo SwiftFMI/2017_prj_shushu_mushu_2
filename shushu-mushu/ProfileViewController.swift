@@ -13,7 +13,6 @@ import FBSDKLoginKit
 
 class ProfileViewController: UIViewController {
 
-
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     
@@ -34,12 +33,14 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Profile"
+        
         if let currentUser = Auth.auth().currentUser {
             let uid = Auth.auth().currentUser?.uid
             Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let dictionary = snapshot.value as? [String: AnyObject] {
-                    self.navigationItem.title = dictionary["profileImageUrl"] as? String
-                    let photo = self.navigationItem.title
+                    let photo = dictionary["profileImageUrl"] as? String
                     if photo != nil {
                         let url = URL(string: photo!)
                         let data = try? Data(contentsOf: url!)
@@ -75,16 +76,4 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
