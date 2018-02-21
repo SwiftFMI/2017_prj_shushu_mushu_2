@@ -27,8 +27,7 @@ class SignInViewController: ViewController {
             Auth.auth().signIn(withEmail: self.usernameTextField.text!, password: self.passwordTextField.text!) { (user, error) in
                 if error == nil {
                     print("You have successfully logged in!")
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-                    self.present(vc!, animated: true, completion: nil)
+                    self.switchToHome()
                     
                 } else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -69,11 +68,7 @@ class SignInViewController: ViewController {
                 }
                 
                 // Present the main view
-                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Home") {
-                    UIApplication.shared.keyWindow?.rootViewController = viewController
-                    self.dismiss(animated: true, completion: nil)
-                }
-                
+                self.switchToHome()
             })
             
         }
@@ -81,9 +76,9 @@ class SignInViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if Auth.auth().currentUser != nil {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-            self.present(vc!, animated: true, completion: nil)
+            switchToHome()
         }
         // Do any additional setup after loading the view.
     }

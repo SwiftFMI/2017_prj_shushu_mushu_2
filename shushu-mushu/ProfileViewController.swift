@@ -20,8 +20,7 @@ class ProfileViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             do {
                 try Auth.auth().signOut()
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignInView")
-                present(vc, animated: true, completion: nil)
+                switchToSignIn()
                 
             } catch let error as NSError {
                 print(error.localizedDescription)

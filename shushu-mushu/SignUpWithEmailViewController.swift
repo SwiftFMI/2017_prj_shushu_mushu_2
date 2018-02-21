@@ -58,8 +58,8 @@ class SignUpWithEmailViewController: ViewController {
                             return
                         }
                     })
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-                    self.present(vc!, animated: true, completion: nil)
+                    
+                    self.switchToHome()
                 } else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
