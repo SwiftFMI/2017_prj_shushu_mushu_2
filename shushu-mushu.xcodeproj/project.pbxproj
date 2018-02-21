@@ -13,6 +13,7 @@
 		85728220203E1ADB0003D4E8 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8572821F203E1ADB0003D4E8 /* ParentViewController.swift */; };
 		85728224203E1AFC0003D4E8 /* LoginParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85728223203E1AFC0003D4E8 /* LoginParentViewController.swift */; };
 		85728226203E1B3F0003D4E8 /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85728225203E1B3F0003D4E8 /* UIButton+Helper.swift */; };
+		85728228203E1C8E0003D4E8 /* UIImageView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85728227203E1C8E0003D4E8 /* UIImageView+Helper.swift */; };
 		8F7708C4E04E8A531521C72B /* Pods_shushu_mushuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6734D0277F25C506EF8F9C95 /* Pods_shushu_mushuUITests.framework */; };
 		AD03AADD20343B9900528798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD03AADC20343B9900528798 /* Assets.xcassets */; };
 		AD03AADF20345F4A00528798 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03AADE20345F4A00528798 /* SignInViewController.swift */; };
@@ -21,7 +22,6 @@
 		AD03AAE5203468EC00528798 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD03AAE4203468EC00528798 /* GoogleService-Info.plist */; };
 		AD4F27522036F27B001DF611 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F27512036F27A001DF611 /* ProfileViewController.swift */; };
 		AD4F275420371B67001DF611 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F275320371B67001DF611 /* EditProfileViewController.swift */; };
-		AD4F2758203B10AA001DF611 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F2757203B10AA001DF611 /* Extensions.swift */; };
 		AD77D490203300B1005453A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD77D48F203300B1005453A8 /* AppDelegate.swift */; };
 		AD77D495203300B1005453A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD77D493203300B1005453A8 /* Main.storyboard */; };
 		AD77D49A203300B1005453A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD77D498203300B1005453A8 /* LaunchScreen.storyboard */; };
@@ -62,6 +62,7 @@
 		8572821F203E1ADB0003D4E8 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		85728223203E1AFC0003D4E8 /* LoginParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginParentViewController.swift; sourceTree = "<group>"; };
 		85728225203E1B3F0003D4E8 /* UIButton+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helper.swift"; sourceTree = "<group>"; };
+		85728227203E1C8E0003D4E8 /* UIImageView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helper.swift"; sourceTree = "<group>"; };
 		86709A4D922F6DF413EAB3F5 /* Pods_shushu_mushu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shushu_mushu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A96ACCF1B6CB3C6C2FD490 /* Pods-shushu-mushuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shushu-mushuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shushu-mushuTests/Pods-shushu-mushuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD03AADC20343B9900528798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		AD03AAE4203468EC00528798 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD4F27512036F27A001DF611 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AD4F275320371B67001DF611 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		AD4F2757203B10AA001DF611 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AD77D48C203300B1005453A8 /* shushu-mushu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shushu-mushu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD77D48F203300B1005453A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD77D494203300B1005453A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +138,7 @@
 				85728219203E0ACC0003D4E8 /* UIViewController+Helper.swift */,
 				8572821B203E0BBB0003D4E8 /* UIColor+Helper.swift */,
 				85728225203E1B3F0003D4E8 /* UIButton+Helper.swift */,
+				85728227203E1C8E0003D4E8 /* UIImageView+Helper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,7 +203,6 @@
 				AD03AADC20343B9900528798 /* Assets.xcassets */,
 				AD77D498203300B1005453A8 /* LaunchScreen.storyboard */,
 				AD77D49B203300B1005453A8 /* Info.plist */,
-				AD4F2757203B10AA001DF611 /* Extensions.swift */,
 				AD03AAE4203468EC00528798 /* GoogleService-Info.plist */,
 			);
 			path = "shushu-mushu";
@@ -583,7 +583,6 @@
 				AD4F27522036F27B001DF611 /* ProfileViewController.swift in Sources */,
 				8572821A203E0ACC0003D4E8 /* UIViewController+Helper.swift in Sources */,
 				AD03AAE12034610E00528798 /* SignUpWithPhoneViewController.swift in Sources */,
-				AD4F2758203B10AA001DF611 /* Extensions.swift in Sources */,
 				85728226203E1B3F0003D4E8 /* UIButton+Helper.swift in Sources */,
 				AD77D490203300B1005453A8 /* AppDelegate.swift in Sources */,
 				8572821C203E0BBB0003D4E8 /* UIColor+Helper.swift in Sources */,
@@ -592,6 +591,7 @@
 				AD9D7F09203C3B69005827E8 /* ContactsViewController.swift in Sources */,
 				AD9D7F18203CD0B5005827E8 /* UserCell.swift in Sources */,
 				AD03AAE32034612300528798 /* SignUpWithEmailViewController.swift in Sources */,
+				85728228203E1C8E0003D4E8 /* UIImageView+Helper.swift in Sources */,
 				AD03AADF20345F4A00528798 /* SignInViewController.swift in Sources */,
 				85728220203E1ADB0003D4E8 /* ParentViewController.swift in Sources */,
 				AD4F275420371B67001DF611 /* EditProfileViewController.swift in Sources */,
