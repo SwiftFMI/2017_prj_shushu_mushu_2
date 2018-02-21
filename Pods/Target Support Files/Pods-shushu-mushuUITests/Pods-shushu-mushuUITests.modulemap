@@ -1,0 +1,6 @@
+framework module Pods_shushu_mushuUITests {
+  umbrella header "Pods-shushu-mushuUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
