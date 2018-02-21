@@ -9,6 +9,17 @@
 import UIKit
 
 extension UIViewController {
+    
+    func createGradientLayer() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.frame
+        let firstColor = UIColor(red:0.83, green:0.33, blue:0.00, alpha:1.0).cgColor
+        let secondColor = UIColor(red:0.95, green:0.61, blue:0.07, alpha:1.0).cgColor
+        gradientLayer.colors = [firstColor,secondColor,firstColor]
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    // MARK: - Navigation
     func pushEditProfileVC() {
         guard let editProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileViewControllerId") as? EditProfileViewController else {
             return

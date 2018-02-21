@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class SignUpWithEmailViewController: ViewController {
+class SignUpWithEmailViewController: LoginParentViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +18,6 @@ class SignUpWithEmailViewController: ViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     var ref = Database.database().reference()
@@ -71,15 +66,5 @@ class SignUpWithEmailViewController: ViewController {
                 }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
