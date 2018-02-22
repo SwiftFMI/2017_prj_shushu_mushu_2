@@ -43,4 +43,13 @@ extension UIViewController {
         
         (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = signInVC
     }
+    
+    func presentChatViewController(userEmail: String) {
+        guard let chatNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChatNavigationControllerId") as? UINavigationController, let chatVC = chatNavigation.viewControllers.first as? ChatViewController else {
+            return
+        }
+        
+        chatVC.email = userEmail
+        present(chatNavigation, animated: true, completion: nil)
+    }
 }

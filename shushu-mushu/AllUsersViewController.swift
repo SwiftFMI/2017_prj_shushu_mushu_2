@@ -45,7 +45,7 @@ class AllUsersViewController: UIViewController, UITableViewDelegate, UITableView
         return users.count
     }
     
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserCell
         let user = users[indexPath.row]
         cell.textLabel?.text = user.name
@@ -57,6 +57,18 @@ class AllUsersViewController: UIViewController, UITableViewDelegate, UITableView
             cell.profileImageView.image = UIImage(named: "default-user-image")
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let user = users[indexPath.row]
+        
+        guard let email = user.email else {
+            return
+        }
+        
+        presentChatViewController(userEmail: email)
     }
 
     override func viewDidLoad() {
