@@ -21,6 +21,8 @@
 		AD03AAE12034610E00528798 /* SignUpWithPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03AAE02034610E00528798 /* SignUpWithPhoneViewController.swift */; };
 		AD03AAE32034612300528798 /* SignUpWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03AAE22034612300528798 /* SignUpWithEmailViewController.swift */; };
 		AD03AAE5203468EC00528798 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD03AAE4203468EC00528798 /* GoogleService-Info.plist */; };
+		AD4EC930203EE64000724DE0 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EC92F203EE64000724DE0 /* MPCManager.swift */; };
+		AD4EC932203EEA6900724DE0 /* NearbyUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EC931203EEA6900724DE0 /* NearbyUsersViewController.swift */; };
 		AD4F27522036F27B001DF611 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F27512036F27A001DF611 /* ProfileViewController.swift */; };
 		AD4F275420371B67001DF611 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F275320371B67001DF611 /* EditProfileViewController.swift */; };
 		AD77D490203300B1005453A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD77D48F203300B1005453A8 /* AppDelegate.swift */; };
@@ -72,6 +74,8 @@
 		AD03AAE02034610E00528798 /* SignUpWithPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithPhoneViewController.swift; sourceTree = "<group>"; };
 		AD03AAE22034612300528798 /* SignUpWithEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewController.swift; sourceTree = "<group>"; };
 		AD03AAE4203468EC00528798 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD4EC92F203EE64000724DE0 /* MPCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
+		AD4EC931203EEA6900724DE0 /* NearbyUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyUsersViewController.swift; sourceTree = "<group>"; };
 		AD4F27512036F27A001DF611 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AD4F275320371B67001DF611 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		AD77D48C203300B1005453A8 /* shushu-mushu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shushu-mushu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,8 +201,10 @@
 				AD03AADE20345F4A00528798 /* SignInViewController.swift */,
 				AD03AAE02034610E00528798 /* SignUpWithPhoneViewController.swift */,
 				AD03AAE22034612300528798 /* SignUpWithEmailViewController.swift */,
+				AD4EC92F203EE64000724DE0 /* MPCManager.swift */,
 				AD9D7F08203C3B69005827E8 /* ContactsViewController.swift */,
 				AD9D7F0C203C59C9005827E8 /* AllUsersViewController.swift */,
+				AD4EC931203EEA6900724DE0 /* NearbyUsersViewController.swift */,
 				AD9D7F1D203D4799005827E8 /* SearchUsersViewController.swift */,
 				AD4F27512036F27A001DF611 /* ProfileViewController.swift */,
 				AD4F275320371B67001DF611 /* EditProfileViewController.swift */,
@@ -585,6 +591,7 @@
 				AD9D7F15203C5FFD005827E8 /* User.swift in Sources */,
 				AD4F27522036F27B001DF611 /* ProfileViewController.swift in Sources */,
 				8572821A203E0ACC0003D4E8 /* UIViewController+Helper.swift in Sources */,
+				AD4EC932203EEA6900724DE0 /* NearbyUsersViewController.swift in Sources */,
 				AD03AAE12034610E00528798 /* SignUpWithPhoneViewController.swift in Sources */,
 				85728226203E1B3F0003D4E8 /* UIButton+Helper.swift in Sources */,
 				AD77D490203300B1005453A8 /* AppDelegate.swift in Sources */,
@@ -595,6 +602,7 @@
 				AD9D7F18203CD0B5005827E8 /* UserCell.swift in Sources */,
 				8572822A203E1EA90003D4E8 /* MessagesViewController.swift in Sources */,
 				AD03AAE32034612300528798 /* SignUpWithEmailViewController.swift in Sources */,
+				AD4EC930203EE64000724DE0 /* MPCManager.swift in Sources */,
 				85728228203E1C8E0003D4E8 /* UIImageView+Helper.swift in Sources */,
 				AD03AADF20345F4A00528798 /* SignInViewController.swift in Sources */,
 				85728220203E1ADB0003D4E8 /* ParentViewController.swift in Sources */,
