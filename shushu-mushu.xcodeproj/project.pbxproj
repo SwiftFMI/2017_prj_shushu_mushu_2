@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		55D538CDE9D48ECC056F92E1 /* Pods_shushu_mushu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86709A4D922F6DF413EAB3F5 /* Pods_shushu_mushu.framework */; };
+		8551B4F92040720C00B00B77 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B4F82040720C00B00B77 /* UserCell.swift */; };
+		8551B4FD2040724900B00B77 /* SignUpWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B4FA2040724900B00B77 /* SignUpWithEmailViewController.swift */; };
+		8551B4FE2040724900B00B77 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B4FB2040724900B00B77 /* SignInViewController.swift */; };
+		8551B4FF2040724900B00B77 /* SignUpWithPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B4FC2040724900B00B77 /* SignUpWithPhoneViewController.swift */; };
+		8551B506204072AF00B00B77 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B500204072AF00B00B77 /* EditProfileViewController.swift */; };
+		8551B507204072AF00B00B77 /* AllUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B501204072AF00B00B77 /* AllUsersViewController.swift */; };
+		8551B508204072AF00B00B77 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B502204072AF00B00B77 /* ContactsViewController.swift */; };
+		8551B509204072AF00B00B77 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B503204072AF00B00B77 /* ProfileViewController.swift */; };
+		8551B50A204072AF00B00B77 /* NearbyUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B504204072AF00B00B77 /* NearbyUsersViewController.swift */; };
+		8551B50B204072AF00B00B77 /* SearchUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B505204072AF00B00B77 /* SearchUsersViewController.swift */; };
 		8572821A203E0ACC0003D4E8 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85728219203E0ACC0003D4E8 /* UIViewController+Helper.swift */; };
 		8572821C203E0BBB0003D4E8 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8572821B203E0BBB0003D4E8 /* UIColor+Helper.swift */; };
 		85728220203E1ADB0003D4E8 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8572821F203E1ADB0003D4E8 /* ParentViewController.swift */; };
@@ -29,24 +39,14 @@
 		85866C8F2040234900C79F96 /* ParentChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85866C8E2040234900C79F96 /* ParentChatMessageTableViewCell.swift */; };
 		8F7708C4E04E8A531521C72B /* Pods_shushu_mushuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6734D0277F25C506EF8F9C95 /* Pods_shushu_mushuUITests.framework */; };
 		AD03AADD20343B9900528798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD03AADC20343B9900528798 /* Assets.xcassets */; };
-		AD03AADF20345F4A00528798 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03AADE20345F4A00528798 /* SignInViewController.swift */; };
-		AD03AAE12034610E00528798 /* SignUpWithPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03AAE02034610E00528798 /* SignUpWithPhoneViewController.swift */; };
-		AD03AAE32034612300528798 /* SignUpWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03AAE22034612300528798 /* SignUpWithEmailViewController.swift */; };
 		AD03AAE5203468EC00528798 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD03AAE4203468EC00528798 /* GoogleService-Info.plist */; };
 		AD4EC930203EE64000724DE0 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EC92F203EE64000724DE0 /* MPCManager.swift */; };
-		AD4EC932203EEA6900724DE0 /* NearbyUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EC931203EEA6900724DE0 /* NearbyUsersViewController.swift */; };
-		AD4F27522036F27B001DF611 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F27512036F27A001DF611 /* ProfileViewController.swift */; };
-		AD4F275420371B67001DF611 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4F275320371B67001DF611 /* EditProfileViewController.swift */; };
 		AD77D490203300B1005453A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD77D48F203300B1005453A8 /* AppDelegate.swift */; };
 		AD77D495203300B1005453A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD77D493203300B1005453A8 /* Main.storyboard */; };
 		AD77D49A203300B1005453A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD77D498203300B1005453A8 /* LaunchScreen.storyboard */; };
 		AD77D4A5203300B1005453A8 /* shushu_mushuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD77D4A4203300B1005453A8 /* shushu_mushuTests.swift */; };
 		AD77D4B0203300B1005453A8 /* shushu_mushuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD77D4AF203300B1005453A8 /* shushu_mushuUITests.swift */; };
-		AD9D7F09203C3B69005827E8 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D7F08203C3B69005827E8 /* ContactsViewController.swift */; };
-		AD9D7F0D203C59C9005827E8 /* AllUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D7F0C203C59C9005827E8 /* AllUsersViewController.swift */; };
 		AD9D7F15203C5FFD005827E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D7F14203C5FFD005827E8 /* User.swift */; };
-		AD9D7F18203CD0B5005827E8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D7F17203CD0B5005827E8 /* UserCell.swift */; };
-		AD9D7F1E203D4799005827E8 /* SearchUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9D7F1D203D4799005827E8 /* SearchUsersViewController.swift */; };
 		BD941D6409DE882E63A5A59D /* Pods_shushu_mushuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C0578704BEBD57192BA7C9 /* Pods_shushu_mushuTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +72,16 @@
 		2D7B292082AE9B992BA4CC84 /* Pods-shushu-mushu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shushu-mushu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shushu-mushu/Pods-shushu-mushu.debug.xcconfig"; sourceTree = "<group>"; };
 		2FC5375E1C91878C055CE3C9 /* Pods-shushu-mushuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shushu-mushuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shushu-mushuUITests/Pods-shushu-mushuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6734D0277F25C506EF8F9C95 /* Pods_shushu_mushuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shushu_mushuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8551B4F82040720C00B00B77 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		8551B4FA2040724900B00B77 /* SignUpWithEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewController.swift; sourceTree = "<group>"; };
+		8551B4FB2040724900B00B77 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		8551B4FC2040724900B00B77 /* SignUpWithPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpWithPhoneViewController.swift; sourceTree = "<group>"; };
+		8551B500204072AF00B00B77 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		8551B501204072AF00B00B77 /* AllUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllUsersViewController.swift; sourceTree = "<group>"; };
+		8551B502204072AF00B00B77 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		8551B503204072AF00B00B77 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8551B504204072AF00B00B77 /* NearbyUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyUsersViewController.swift; sourceTree = "<group>"; };
+		8551B505204072AF00B00B77 /* SearchUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersViewController.swift; sourceTree = "<group>"; };
 		85728219203E0ACC0003D4E8 /* UIViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
 		8572821B203E0BBB0003D4E8 /* UIColor+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		8572821F203E1ADB0003D4E8 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
@@ -94,14 +104,8 @@
 		86709A4D922F6DF413EAB3F5 /* Pods_shushu_mushu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shushu_mushu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A96ACCF1B6CB3C6C2FD490 /* Pods-shushu-mushuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shushu-mushuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shushu-mushuTests/Pods-shushu-mushuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD03AADC20343B9900528798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AD03AADE20345F4A00528798 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		AD03AAE02034610E00528798 /* SignUpWithPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithPhoneViewController.swift; sourceTree = "<group>"; };
-		AD03AAE22034612300528798 /* SignUpWithEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWithEmailViewController.swift; sourceTree = "<group>"; };
 		AD03AAE4203468EC00528798 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD4EC92F203EE64000724DE0 /* MPCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
-		AD4EC931203EEA6900724DE0 /* NearbyUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyUsersViewController.swift; sourceTree = "<group>"; };
-		AD4F27512036F27A001DF611 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		AD4F275320371B67001DF611 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		AD77D48C203300B1005453A8 /* shushu-mushu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shushu-mushu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD77D48F203300B1005453A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD77D494203300B1005453A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,11 +117,7 @@
 		AD77D4AB203300B1005453A8 /* shushu-mushuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "shushu-mushuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD77D4AF203300B1005453A8 /* shushu_mushuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shushu_mushuUITests.swift; sourceTree = "<group>"; };
 		AD77D4B1203300B1005453A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD9D7F08203C3B69005827E8 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
-		AD9D7F0C203C59C9005827E8 /* AllUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersViewController.swift; sourceTree = "<group>"; };
 		AD9D7F14203C5FFD005827E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		AD9D7F17203CD0B5005827E8 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
-		AD9D7F1D203D4799005827E8 /* SearchUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersViewController.swift; sourceTree = "<group>"; };
 		ADF3FBFF20346F4C00E4D46A /* shushu-mushu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "shushu-mushu.entitlements"; sourceTree = "<group>"; };
 		AF675DB9CA5A663316FBE7A2 /* Pods-shushu-mushuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shushu-mushuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shushu-mushuUITests/Pods-shushu-mushuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C5C0578704BEBD57192BA7C9 /* Pods_shushu_mushuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shushu_mushuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +180,15 @@
 				8572821E203E1AC40003D4E8 /* Parents */,
 				85728229203E1EA90003D4E8 /* MessagesViewController.swift */,
 				85866C72203F483900C79F96 /* ChatViewController.swift */,
+				8551B4FB2040724900B00B77 /* SignInViewController.swift */,
+				8551B4FA2040724900B00B77 /* SignUpWithEmailViewController.swift */,
+				8551B4FC2040724900B00B77 /* SignUpWithPhoneViewController.swift */,
+				8551B501204072AF00B00B77 /* AllUsersViewController.swift */,
+				8551B502204072AF00B00B77 /* ContactsViewController.swift */,
+				8551B500204072AF00B00B77 /* EditProfileViewController.swift */,
+				8551B504204072AF00B00B77 /* NearbyUsersViewController.swift */,
+				8551B503204072AF00B00B77 /* ProfileViewController.swift */,
+				8551B505204072AF00B00B77 /* SearchUsersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +205,7 @@
 		85866C7A203F5F9C00C79F96 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8551B4F82040720C00B00B77 /* UserCell.swift */,
 				85866C7B203F5FC300C79F96 /* ChatMessageTableViewCell.swift */,
 				85866C7C203F5FC300C79F96 /* ChatMessageTableViewCell.xib */,
 				85866C842040057F00C79F96 /* ChatTableViewCell.swift */,
@@ -247,17 +257,7 @@
 				AD9D7F11203C5FB3005827E8 /* Models */,
 				ADF3FBFF20346F4C00E4D46A /* shushu-mushu.entitlements */,
 				AD77D48F203300B1005453A8 /* AppDelegate.swift */,
-				AD9D7F17203CD0B5005827E8 /* UserCell.swift */,
-				AD03AADE20345F4A00528798 /* SignInViewController.swift */,
-				AD03AAE02034610E00528798 /* SignUpWithPhoneViewController.swift */,
-				AD03AAE22034612300528798 /* SignUpWithEmailViewController.swift */,
 				AD4EC92F203EE64000724DE0 /* MPCManager.swift */,
-				AD9D7F08203C3B69005827E8 /* ContactsViewController.swift */,
-				AD9D7F0C203C59C9005827E8 /* AllUsersViewController.swift */,
-				AD4EC931203EEA6900724DE0 /* NearbyUsersViewController.swift */,
-				AD9D7F1D203D4799005827E8 /* SearchUsersViewController.swift */,
-				AD4F27512036F27A001DF611 /* ProfileViewController.swift */,
-				AD4F275320371B67001DF611 /* EditProfileViewController.swift */,
 				AD77D493203300B1005453A8 /* Main.storyboard */,
 				AD03AADC20343B9900528798 /* Assets.xcassets */,
 				AD77D498203300B1005453A8 /* LaunchScreen.storyboard */,
@@ -642,35 +642,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD9D7F1E203D4799005827E8 /* SearchUsersViewController.swift in Sources */,
+				8551B4FE2040724900B00B77 /* SignInViewController.swift in Sources */,
 				AD9D7F15203C5FFD005827E8 /* User.swift in Sources */,
-				AD4F27522036F27B001DF611 /* ProfileViewController.swift in Sources */,
 				8572821A203E0ACC0003D4E8 /* UIViewController+Helper.swift in Sources */,
-				AD4EC932203EEA6900724DE0 /* NearbyUsersViewController.swift in Sources */,
+				8551B509204072AF00B00B77 /* ProfileViewController.swift in Sources */,
+				8551B4FD2040724900B00B77 /* SignUpWithEmailViewController.swift in Sources */,
 				85866C77203F5B1C00C79F96 /* String+Helper.swift in Sources */,
-				AD03AAE12034610E00528798 /* SignUpWithPhoneViewController.swift in Sources */,
+				8551B506204072AF00B00B77 /* EditProfileViewController.swift in Sources */,
 				85728226203E1B3F0003D4E8 /* UIButton+Helper.swift in Sources */,
+				8551B4F92040720C00B00B77 /* UserCell.swift in Sources */,
 				85866C8C20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.swift in Sources */,
 				85866C79203F5DA200C79F96 /* ChatMessage.swift in Sources */,
 				AD77D490203300B1005453A8 /* AppDelegate.swift in Sources */,
 				8572821C203E0BBB0003D4E8 /* UIColor+Helper.swift in Sources */,
+				8551B4FF2040724900B00B77 /* SignUpWithPhoneViewController.swift in Sources */,
+				8551B507204072AF00B00B77 /* AllUsersViewController.swift in Sources */,
+				8551B50B204072AF00B00B77 /* SearchUsersViewController.swift in Sources */,
+				8551B50A204072AF00B00B77 /* NearbyUsersViewController.swift in Sources */,
 				85866C862040057F00C79F96 /* ChatTableViewCell.swift in Sources */,
-				AD9D7F0D203C59C9005827E8 /* AllUsersViewController.swift in Sources */,
 				85866C8F2040234900C79F96 /* ParentChatMessageTableViewCell.swift in Sources */,
 				85866C73203F483900C79F96 /* ChatViewController.swift in Sources */,
+				8551B508204072AF00B00B77 /* ContactsViewController.swift in Sources */,
 				85866C81204001CB00C79F96 /* Api.swift in Sources */,
 				85728224203E1AFC0003D4E8 /* LoginParentViewController.swift in Sources */,
-				AD9D7F09203C3B69005827E8 /* ContactsViewController.swift in Sources */,
-				AD9D7F18203CD0B5005827E8 /* UserCell.swift in Sources */,
 				8572822A203E1EA90003D4E8 /* MessagesViewController.swift in Sources */,
-				AD03AAE32034612300528798 /* SignUpWithEmailViewController.swift in Sources */,
 				85866C7D203F5FC300C79F96 /* ChatMessageTableViewCell.swift in Sources */,
 				AD4EC930203EE64000724DE0 /* MPCManager.swift in Sources */,
 				85866C892040084E00C79F96 /* Chat.swift in Sources */,
 				85728228203E1C8E0003D4E8 /* UIImageView+Helper.swift in Sources */,
-				AD03AADF20345F4A00528798 /* SignInViewController.swift in Sources */,
 				85728220203E1ADB0003D4E8 /* ParentViewController.swift in Sources */,
-				AD4F275420371B67001DF611 /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
