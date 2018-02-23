@@ -30,6 +30,15 @@ extension UIViewController {
         navigationController?.view.backgroundColor = .clear
     }
     
+    func showErrorAlert(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     // MARK: - Navigation
     func pushEditProfileVC() {
         guard let editProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileViewControllerId") as? EditProfileViewController else {

@@ -9,36 +9,39 @@
 import UIKit
 import Firebase
 
-class AllUsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class AllUsersViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var users = [User]()
-    let cellId = "cellId"
     @IBOutlet weak var tableView: UITableView!
     
+    var users = [User]()
+    private let cellId = "cellId"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
+        fetchUser()
+    }
+    
     func fetchUser() {
-        Database.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
-            
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let user = User(dictionary: dictionary)
-                user.id = snapshot.key
-                self.users.append(user)
-                
-                //this will crash because of background thread, so lets use dispatch_async to fix
-                DispatchQueue.main.async(execute: {
-                    self.tableView.reloadData()
-                })
-                // user.name = dictionary["name"]
+        Database.database().reference().child("users").observe(.childAdded, with: { [weak self] (snapshot) in
+            guard let weakSelf = self, let dictionary = snapshot.value as? [String: AnyObject] else {
+                return
             }
             
+            let user = User(dictionary: dictionary)
+            user.id = snapshot.key
+            weakSelf.users.append(user)
+            
+            //this will crash because of background thread, so lets use dispatch_async to fix
+            DispatchQueue.main.async(execute: { [weak self] in
+                self?.tableView.reloadData()
+            })
+            // user.name = dictionary["name"]
         }, withCancel: nil)
     }
     
     func handleCancel() {
         dismiss(animated: true, completion: nil)
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,8 +55,7 @@ class AllUsersViewController: UIViewController, UITableViewDelegate, UITableView
         cell.detailTextLabel?.text = user.email
         if let profileImageUrl = user.profileImageUrl {
             cell.profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
-        }
-        else {
+        } else {
             cell.profileImageView.image = UIImage(named: "default-user-image")
         }
         return cell
@@ -70,18 +72,4 @@ class AllUsersViewController: UIViewController, UITableViewDelegate, UITableView
         
         presentChatViewController(userEmail: email)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
-        fetchUser()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }
-
-
-

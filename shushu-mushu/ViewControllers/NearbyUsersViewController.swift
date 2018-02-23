@@ -9,7 +9,7 @@
 import UIKit
 import MultipeerConnectivity
 
-class NearbyUsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MPCManagerDelegate {
+final class NearbyUsersViewController: ParentViewController, UITableViewDelegate, UITableViewDataSource, MPCManagerDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let cellId = "cellId"
     var isAdvertising: Bool!
@@ -23,7 +23,6 @@ class NearbyUsersViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserCell
         cell.textLabel?.text = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
         return cell
-
     }
     
     private func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -103,24 +102,5 @@ class NearbyUsersViewController: UIViewController, UITableViewDelegate, UITableV
         appDelegate.mpcManager.browser.startBrowsingForPeers()
         appDelegate.mpcManager.advertiser.startAdvertisingPeer()
         isAdvertising = true
-
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

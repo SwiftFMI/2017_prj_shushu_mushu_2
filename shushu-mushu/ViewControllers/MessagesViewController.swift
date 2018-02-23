@@ -41,9 +41,7 @@ final class MessagesViewController: ParentViewController {
             }
             
             weakSelf.dataArray = responseDictionary
-                .flatMap({ (key, value) -> Chat? in
-                    return Chat(dictionary: value)
-                })
+                .flatMap({ (key, value) -> Chat? in Chat(dictionary: value) })
                 .sorted(by: { $0.lastMessageTimestamp > $1.lastMessageTimestamp })
             
             weakSelf.tableView.reloadData()

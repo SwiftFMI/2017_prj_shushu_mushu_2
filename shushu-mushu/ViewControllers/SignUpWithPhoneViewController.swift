@@ -8,14 +8,8 @@
 
 import UIKit
 
-class SignUpWithPhoneViewController: LoginParentViewController {
+final class SignUpWithPhoneViewController: LoginParentViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
     @IBOutlet weak var phoneField: UITextField!
     
     @IBOutlet weak var passwordField: UITextField!
@@ -23,5 +17,4 @@ class SignUpWithPhoneViewController: LoginParentViewController {
     @IBAction func signUpWithPhone(_ sender: UIButton) {
         
     }
-    
 }

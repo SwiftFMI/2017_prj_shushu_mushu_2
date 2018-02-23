@@ -18,6 +18,7 @@
 		8551B509204072AF00B00B77 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B503204072AF00B00B77 /* ProfileViewController.swift */; };
 		8551B50A204072AF00B00B77 /* NearbyUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B504204072AF00B00B77 /* NearbyUsersViewController.swift */; };
 		8551B50B204072AF00B00B77 /* SearchUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B505204072AF00B00B77 /* SearchUsersViewController.swift */; };
+		8551B50E20407E9F00B00B77 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551B50D20407E9F00B00B77 /* UserManager.swift */; };
 		8572821A203E0ACC0003D4E8 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85728219203E0ACC0003D4E8 /* UIViewController+Helper.swift */; };
 		8572821C203E0BBB0003D4E8 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8572821B203E0BBB0003D4E8 /* UIColor+Helper.swift */; };
 		85728220203E1ADB0003D4E8 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8572821F203E1ADB0003D4E8 /* ParentViewController.swift */; };
@@ -82,6 +83,7 @@
 		8551B503204072AF00B00B77 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8551B504204072AF00B00B77 /* NearbyUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyUsersViewController.swift; sourceTree = "<group>"; };
 		8551B505204072AF00B00B77 /* SearchUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersViewController.swift; sourceTree = "<group>"; };
+		8551B50D20407E9F00B00B77 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		85728219203E0ACC0003D4E8 /* UIViewController+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
 		8572821B203E0BBB0003D4E8 /* UIColor+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		8572821F203E1ADB0003D4E8 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8551B50C20407E1400B00B77 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8551B50D20407E9F00B00B77 /* UserManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		85728218203E0AB40003D4E8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,7 +215,6 @@
 		85866C7A203F5F9C00C79F96 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8551B4F82040720C00B00B77 /* UserCell.swift */,
 				85866C7B203F5FC300C79F96 /* ChatMessageTableViewCell.swift */,
 				85866C7C203F5FC300C79F96 /* ChatMessageTableViewCell.xib */,
 				85866C842040057F00C79F96 /* ChatTableViewCell.swift */,
@@ -213,6 +222,7 @@
 				85866C8A20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.swift */,
 				85866C8B20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.xib */,
 				85866C8E2040234900C79F96 /* ParentChatMessageTableViewCell.swift */,
+				8551B4F82040720C00B00B77 /* UserCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -250,6 +260,7 @@
 		AD77D48E203300B1005453A8 /* shushu-mushu */ = {
 			isa = PBXGroup;
 			children = (
+				8551B50C20407E1400B00B77 /* Managers */,
 				85866C7F204001B500C79F96 /* Objects */,
 				85866C7A203F5F9C00C79F96 /* Cells */,
 				8572821D203E1AC40003D4E8 /* ViewControllers */,
@@ -660,6 +671,7 @@
 				8551B50B204072AF00B00B77 /* SearchUsersViewController.swift in Sources */,
 				8551B50A204072AF00B00B77 /* NearbyUsersViewController.swift in Sources */,
 				85866C862040057F00C79F96 /* ChatTableViewCell.swift in Sources */,
+				8551B50E20407E9F00B00B77 /* UserManager.swift in Sources */,
 				85866C8F2040234900C79F96 /* ParentChatMessageTableViewCell.swift in Sources */,
 				85866C73203F483900C79F96 /* ChatViewController.swift in Sources */,
 				8551B508204072AF00B00B77 /* ContactsViewController.swift in Sources */,

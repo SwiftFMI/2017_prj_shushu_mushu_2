@@ -240,4 +240,3 @@ extension ChatViewController: UIImagePickerControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
 }
-

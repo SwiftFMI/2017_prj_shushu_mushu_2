@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SearchUsersViewController: ParentViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+final class SearchUsersViewController: ParentViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!

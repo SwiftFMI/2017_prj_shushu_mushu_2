@@ -10,39 +10,43 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 
-class SignInViewController: LoginParentViewController {
+final class SignInViewController: LoginParentViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBAction func signIn(_ sender: UIButton) {
-        if self.usernameTextField.text == "" || self.passwordTextField.text == "" {
-            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if Auth.auth().currentUser != nil {
+            switchToHome()
         } else {
-            hideKeyboard()
+            makeNavigationBarTransparent()
+        }
+    }
+    
+    @IBAction func signIn(_ sender: UIButton) {
+        guard usernameTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false else {
+            showErrorAlert(message: "Please enter an email and password.")
+            return
+        }
+        
+        hideKeyboard()
+        
+        Auth.auth().signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) { [weak self] (user, error) in
+            guard let weakSelf = self else {
+                return
+            }
             
-            Auth.auth().signIn(withEmail: self.usernameTextField.text!, password: self.passwordTextField.text!) { (user, error) in
-                if error == nil {
-                    print("You have successfully logged in!")
-                    self.switchToHome()
-                    
-                } else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
-                }
+            if error == nil {
+                weakSelf.switchToHome()
+            } else {
+                weakSelf.showErrorAlert(message: error?.localizedDescription ?? "")
             }
         }
     }
-    var isFacebookLogin = false
+    
     @IBAction func facebookLogin(sender: UIButton) {
-        isFacebookLogin = true
         let fbLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if let error = error {
@@ -58,32 +62,22 @@ class SignInViewController: LoginParentViewController {
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
             
             // Perform login by calling Firebase APIs
-            Auth.auth().signIn(with: credential, completion: { (user, error) in
-                if let error = error {
-                    print("Login error: \(error.localizedDescription)")
-                    let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
-                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(okayAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    
+            Auth.auth().signIn(with: credential, completion: { [weak self] (user, error) in
+                guard let weakSelf = self else {
                     return
                 }
                 
+                if let error = error {
+                    print("Login error: \(error.localizedDescription)")
+                    weakSelf.showErrorAlert(message: error.localizedDescription)
+                    return
+                }
+                
+                UserManager.shared.isFacebookLogin = true
+                
                 // Present the main view
-                self.switchToHome()
+                weakSelf.switchToHome()
             })
-            
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        if Auth.auth().currentUser != nil {
-            switchToHome()
-            
-        } else {
-            makeNavigationBarTransparent()
         }
     }
 }

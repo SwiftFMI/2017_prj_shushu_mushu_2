@@ -11,24 +11,24 @@ import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: ParentViewController {
 
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     
     @IBAction func signOut(_ sender: UIButton) {
         if Auth.auth().currentUser != nil {
             do {
                 try Auth.auth().signOut()
                 switchToSignIn()
+                UserManager.shared.isFacebookLogin = false
                 
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
         }
     }
-    
-    @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +52,8 @@ class ProfileViewController: UIViewController {
                     self.userEmail.text = dictionary["email"] as? String
                 }
             }, withCancel: nil)
-            let signIn = SignInViewController()
-            if signIn.isFacebookLogin == true {
+
+            if UserManager.shared.isFacebookLogin {
                 let photo = currentUser.photoURL?.absoluteString
                 let url = URL(string: photo!)
                 let data = try? Data(contentsOf: url!)
@@ -67,12 +67,5 @@ class ProfileViewController: UIViewController {
             profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
             profileImage.clipsToBounds = true
         }
-    
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
