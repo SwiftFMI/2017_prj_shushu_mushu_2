@@ -499,12 +499,31 @@
                     <view key="view" contentMode="scaleToFill" id="81z-CD-PZk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="smm-12-3nC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MHP-Mk-1He" id="3pO-il-OZp"/>
+                                    <outlet property="delegate" destination="MHP-Mk-1He" id="6C8-QT-HHZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.95294117649999999" green="0.61176470589999998" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nhm-Yk-glP" firstAttribute="trailing" secondItem="smm-12-3nC" secondAttribute="trailing" id="FMR-46-4DF"/>
+                            <constraint firstItem="Nhm-Yk-glP" firstAttribute="bottom" secondItem="smm-12-3nC" secondAttribute="bottom" id="KgB-CR-OIy"/>
+                            <constraint firstItem="smm-12-3nC" firstAttribute="leading" secondItem="Nhm-Yk-glP" secondAttribute="leading" id="SJD-Wk-RgW"/>
+                            <constraint firstItem="smm-12-3nC" firstAttribute="top" secondItem="Nhm-Yk-glP" secondAttribute="top" id="vXR-f1-OXM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Nhm-Yk-glP"/>
                     </view>
                     <navigationItem key="navigationItem" id="AlC-IS-eAT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="smm-12-3nC" id="KAU-ud-v0o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BdZ-u2-e7Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
