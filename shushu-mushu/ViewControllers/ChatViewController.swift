@@ -16,6 +16,7 @@ final class ChatViewController: ParentViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var sendButton: UIButton!
     @IBOutlet private weak var textView: UITextView!
+    @IBOutlet private weak var inputContainerView: UIView!
     
     private var dataArray: [ChatMessage] = []
     private var chatId = ""
@@ -25,13 +26,13 @@ final class ChatViewController: ParentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = 50
         tableView.register(UINib(nibName: "\(ChatMessageTableViewCell.self)", bundle: nil), forCellReuseIdentifier: ChatMessageTableViewCell.id)
         
         navigationItem.title = "Chat"
         backButton.title = "Back"
         sendButton.setTitle("Send", for: .normal)
 
+        updateTableViewBottomInset()
         generateChatId()
     }
     
@@ -52,6 +53,13 @@ final class ChatViewController: ParentViewController {
     
     private func clearInputText() {
         textView.text = ""
+    }
+    
+    private func updateTableViewBottomInset() {
+        let bottomInset = inputContainerView.frame.size.height
+        
+        tableView.contentInset.bottom = bottomInset
+        tableView.scrollIndicatorInsets.bottom = bottomInset
     }
     
     private func fetchChatMessages() {
