@@ -38,37 +38,22 @@ class SearchUsersViewController: ParentViewController, UITableViewDataSource, UI
         }, withCancel: nil)
     }
     
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchActive = true;
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filtered = users.filter({ (text) -> Bool in
-            let tmp = text.email as NSString?
-            let range = tmp?.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
-            let tmp2 = text.name as NSString?
-            let range2 = tmp2?.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
-            return range!.location != NSNotFound || range2!.location != NSNotFound
-        })
-        if(filtered.count == 0){
-            searchActive = false;
+        searchActive = !searchText.isEmpty
+        
+        if searchText.isEmpty {
+            filtered = []
         } else {
-            searchActive = true;
+            filtered = users.filter({ (text) -> Bool in
+                let tmp = text.email as NSString?
+                let range = tmp?.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+                let tmp2 = text.name as NSString?
+                let range2 = tmp2?.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+                return range!.location != NSNotFound || range2!.location != NSNotFound
+            })
         }
-        self.tableView.reloadData()
+        
+        tableView.reloadData()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -76,10 +61,7 @@ class SearchUsersViewController: ParentViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(searchActive) {
-            return filtered.count
-        }
-        return users.count;
+        return searchActive ? filtered.count : users.count
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
