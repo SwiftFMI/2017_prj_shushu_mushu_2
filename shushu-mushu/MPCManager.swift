@@ -112,9 +112,9 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         return true
     }
     
-    override init() {
+    init(email: String) {
         super.init()
-        peer = MCPeerID(displayName: UIDevice.current.name)
+        peer = MCPeerID(displayName: email)
         session = MCSession(peer: peer)
         session.delegate = self
         browser = MCNearbyServiceBrowser(peer: peer, serviceType: "appcoda-mpc")
@@ -122,7 +122,4 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: nil, serviceType: "appcoda-mpc")
         advertiser.delegate = self
     }
-    
 }
-
-

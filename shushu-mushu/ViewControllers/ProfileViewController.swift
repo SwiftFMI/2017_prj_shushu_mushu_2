@@ -22,7 +22,7 @@ final class ProfileViewController: ParentViewController {
             do {
                 try Auth.auth().signOut()
                 switchToSignIn()
-                UserManager.shared.isFacebookLogin = false
+                UserManager.shared.logout()
                 
             } catch let error as NSError {
                 print(error.localizedDescription)

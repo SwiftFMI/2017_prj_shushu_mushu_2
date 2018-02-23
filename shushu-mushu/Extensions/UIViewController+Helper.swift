@@ -53,6 +53,8 @@ extension UIViewController {
             return
         }
         
+        UserManager.shared.login()
+        
         (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = tabBarController
     }
     

@@ -7,9 +7,23 @@
 //
 
 import Foundation
+import Firebase
 
 final class UserManager {
     static let shared = UserManager()
     
     var isFacebookLogin = false
+    private(set) var mpcManager: MPCManager?
+    
+    func login() {
+        guard let email = Auth.auth().currentUser?.email else {
+            return
+        }
+        
+        mpcManager = MPCManager(email: email)
+    }
+    
+    func logout() {
+        isFacebookLogin = false
+    }
 }
