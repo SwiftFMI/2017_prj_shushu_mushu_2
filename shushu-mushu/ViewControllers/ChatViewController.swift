@@ -27,9 +27,10 @@ final class ChatViewController: ParentViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "\(ChatMessageTableViewCell.self)", bundle: nil), forCellReuseIdentifier: ChatMessageTableViewCell.id)
+        tableView.register(UINib(nibName: "\(LoggedUserChatMessageTableViewCell.self)", bundle: nil), forCellReuseIdentifier: LoggedUserChatMessageTableViewCell.id)
         
         navigationItem.title = "Chat"
-        backButton.title = "Back"
+        backButton.title = "Close"
         sendButton.setTitle("Send", for: .normal)
 
         updateTableViewBottomInset()
@@ -106,13 +107,24 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let chatMessageCell = tableView.dequeueReusableCell(withIdentifier: ChatMessageTableViewCell.id) as? ChatMessageTableViewCell else {
-            return UITableViewCell()
+        let chatMessage = dataArray[indexPath.row]
+        
+        if chatMessage.isFromLoggedUser {
+            guard let chatMessageCell = tableView.dequeueReusableCell(withIdentifier: LoggedUserChatMessageTableViewCell.id) as? LoggedUserChatMessageTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            chatMessageCell.setupForChatMessage(chatMessage)
+            return chatMessageCell
+            
+        } else {
+            guard let chatMessageCell = tableView.dequeueReusableCell(withIdentifier: ChatMessageTableViewCell.id) as? ChatMessageTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            chatMessageCell.setupForChatMessage(chatMessage)
+            return chatMessageCell
         }
-        
-        chatMessageCell.setupForChatMessage(dataArray[indexPath.row])
-        
-        return chatMessageCell
     }
 }
 

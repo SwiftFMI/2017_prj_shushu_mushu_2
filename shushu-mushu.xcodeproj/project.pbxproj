@@ -24,6 +24,8 @@
 		85866C862040057F00C79F96 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85866C842040057F00C79F96 /* ChatTableViewCell.swift */; };
 		85866C872040057F00C79F96 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85866C852040057F00C79F96 /* ChatTableViewCell.xib */; };
 		85866C892040084E00C79F96 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85866C882040084E00C79F96 /* Chat.swift */; };
+		85866C8C20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85866C8A20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.swift */; };
+		85866C8D20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85866C8B20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.xib */; };
 		8F7708C4E04E8A531521C72B /* Pods_shushu_mushuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6734D0277F25C506EF8F9C95 /* Pods_shushu_mushuUITests.framework */; };
 		AD03AADD20343B9900528798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD03AADC20343B9900528798 /* Assets.xcassets */; };
 		AD03AADF20345F4A00528798 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD03AADE20345F4A00528798 /* SignInViewController.swift */; };
@@ -85,6 +87,8 @@
 		85866C842040057F00C79F96 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		85866C852040057F00C79F96 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		85866C882040084E00C79F96 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		85866C8A20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedUserChatMessageTableViewCell.swift; sourceTree = "<group>"; };
+		85866C8B20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoggedUserChatMessageTableViewCell.xib; sourceTree = "<group>"; };
 		86709A4D922F6DF413EAB3F5 /* Pods_shushu_mushu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shushu_mushu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A96ACCF1B6CB3C6C2FD490 /* Pods-shushu-mushuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shushu-mushuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shushu-mushuTests/Pods-shushu-mushuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AD03AADC20343B9900528798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				85866C7C203F5FC300C79F96 /* ChatMessageTableViewCell.xib */,
 				85866C842040057F00C79F96 /* ChatTableViewCell.swift */,
 				85866C852040057F00C79F96 /* ChatTableViewCell.xib */,
+				85866C8A20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.swift */,
+				85866C8B20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 				AD03AAE5203468EC00528798 /* GoogleService-Info.plist in Resources */,
 				AD03AADD20343B9900528798 /* Assets.xcassets in Resources */,
 				AD77D495203300B1005453A8 /* Main.storyboard in Resources */,
+				85866C8D20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +647,7 @@
 				85866C77203F5B1C00C79F96 /* String+Helper.swift in Sources */,
 				AD03AAE12034610E00528798 /* SignUpWithPhoneViewController.swift in Sources */,
 				85728226203E1B3F0003D4E8 /* UIButton+Helper.swift in Sources */,
+				85866C8C20400FF100C79F96 /* LoggedUserChatMessageTableViewCell.swift in Sources */,
 				85866C79203F5DA200C79F96 /* ChatMessage.swift in Sources */,
 				AD77D490203300B1005453A8 /* AppDelegate.swift in Sources */,
 				8572821C203E0BBB0003D4E8 /* UIColor+Helper.swift in Sources */,

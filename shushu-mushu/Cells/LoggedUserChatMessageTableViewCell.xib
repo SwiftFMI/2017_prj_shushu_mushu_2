@@ -12,17 +12,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ChatMessageTableViewCell" customModule="shushu_mushu" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LoggedUserChatMessageTableViewCell" customModule="shushu_mushu" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vy-ch-zzl">
-                        <rect key="frame" x="15" y="5" width="62" height="33.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQg-Ur-xGO">
+                        <rect key="frame" x="243" y="5" width="62" height="33.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKq-9s-ert">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sa-Mq-uDu">
                                 <rect key="frame" x="10" y="10" width="42" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -31,24 +31,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="QKq-9s-ert" firstAttribute="top" secondItem="8Vy-ch-zzl" secondAttribute="top" constant="10" id="OmP-XJ-60W"/>
-                            <constraint firstItem="QKq-9s-ert" firstAttribute="centerX" secondItem="8Vy-ch-zzl" secondAttribute="centerX" id="X1q-Wo-04R"/>
-                            <constraint firstItem="QKq-9s-ert" firstAttribute="leading" secondItem="8Vy-ch-zzl" secondAttribute="leading" constant="10" id="XJ8-Ss-35C"/>
-                            <constraint firstItem="QKq-9s-ert" firstAttribute="centerY" secondItem="8Vy-ch-zzl" secondAttribute="centerY" id="zKd-3x-yKx"/>
+                            <constraint firstItem="8Sa-Mq-uDu" firstAttribute="centerX" secondItem="zQg-Ur-xGO" secondAttribute="centerX" id="8fs-cm-eYR"/>
+                            <constraint firstItem="8Sa-Mq-uDu" firstAttribute="leading" secondItem="zQg-Ur-xGO" secondAttribute="leading" constant="10" id="cqd-gM-3ar"/>
+                            <constraint firstItem="8Sa-Mq-uDu" firstAttribute="top" secondItem="zQg-Ur-xGO" secondAttribute="top" constant="10" id="k9k-ub-4JV"/>
+                            <constraint firstItem="8Sa-Mq-uDu" firstAttribute="centerY" secondItem="zQg-Ur-xGO" secondAttribute="centerY" id="pMg-L6-nJ7"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="8Vy-ch-zzl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="3n6-fD-Shu"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Vy-ch-zzl" secondAttribute="trailing" constant="100" id="TC7-No-0k5"/>
-                    <constraint firstItem="8Vy-ch-zzl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="cOO-Zd-VDE"/>
-                    <constraint firstAttribute="bottom" secondItem="8Vy-ch-zzl" secondAttribute="bottom" constant="5" id="ruJ-0r-iqn"/>
+                    <constraint firstAttribute="trailing" secondItem="zQg-Ur-xGO" secondAttribute="trailing" constant="15" id="0aJ-gR-m40"/>
+                    <constraint firstItem="zQg-Ur-xGO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="4Fn-bz-qxo"/>
+                    <constraint firstItem="zQg-Ur-xGO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VDc-vN-iDx"/>
+                    <constraint firstItem="zQg-Ur-xGO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="cc7-WL-3c2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="messageContainerView" destination="8Vy-ch-zzl" id="Uhn-bg-bsy"/>
-                <outlet property="messageLabel" destination="QKq-9s-ert" id="1RP-Zg-Tls"/>
+                <outlet property="messageContainerView" destination="zQg-Ur-xGO" id="gs9-OL-rsi"/>
+                <outlet property="messageLabel" destination="8Sa-Mq-uDu" id="sUp-UZ-gFw"/>
             </connections>
         </tableViewCell>
     </objects>
