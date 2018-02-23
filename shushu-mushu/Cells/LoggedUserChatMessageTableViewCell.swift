@@ -8,22 +8,14 @@
 
 import UIKit
 
-final class LoggedUserChatMessageTableViewCell: UITableViewCell {
+final class LoggedUserChatMessageTableViewCell: ParentChatMessageTableViewCell {
 
     static let id = "LoggedUserChatMessageTableViewCell"
-    
-    @IBOutlet private weak var messageLabel: UILabel!
-    @IBOutlet private weak var messageContainerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         messageLabel.textColor = .white
         messageContainerView.backgroundColor = .orange
-        messageContainerView.layer.cornerRadius = 4
-    }
-    
-    func setupForChatMessage(_ chatMessage: ChatMessage) {
-        messageLabel.text = chatMessage.text
     }
 }

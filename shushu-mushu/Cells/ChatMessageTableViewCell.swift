@@ -8,22 +8,14 @@
 
 import UIKit
 
-final class ChatMessageTableViewCell: UITableViewCell {
+final class ChatMessageTableViewCell: ParentChatMessageTableViewCell {
     
     static let id = "ChatMessageTableViewCell"
     
-    @IBOutlet private weak var messageContainerView: UIView!
-    @IBOutlet private weak var messageLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        messageContainerView.layer.cornerRadius = 4
+
         messageLabel.textColor = .black
         messageContainerView.backgroundColor = .lightGrey
-    }
-    
-    func setupForChatMessage(_ chatMessage: ChatMessage) {
-        messageLabel.text = chatMessage.text
     }
 }

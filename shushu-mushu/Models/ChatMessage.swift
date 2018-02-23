@@ -9,17 +9,31 @@
 import Foundation
 import FirebaseAuth
 
-struct ChatMessage {
-    var author: String
-    var text: String
-    var timestamp: TimeInterval
+final class ChatMessage {
+    let author: String
+    let text: String?
+    let imageUrl: String?
+    let timestamp: TimeInterval
+    
+    var rowHeight: CGFloat = 0
     
     init?(dictionary: [String: Any]) {
-        guard let text = dictionary["text"] as? String, let author = dictionary["sender"] as? String, let timestamp = dictionary["dateCreated"] as? TimeInterval else {
+        if let text = dictionary["text"] as? String {
+            self.text = text
+            self.imageUrl = nil
+            
+        } else if let imageUrl = dictionary["imageUrl"] as? String {
+            self.imageUrl = imageUrl
+            self.text = nil
+            
+        } else {
             return nil
         }
         
-        self.text = text
+        guard let author = dictionary["sender"] as? String, let timestamp = dictionary["dateCreated"] as? TimeInterval else {
+            return nil
+        }
+        
         self.author = author
         self.timestamp = timestamp
     }

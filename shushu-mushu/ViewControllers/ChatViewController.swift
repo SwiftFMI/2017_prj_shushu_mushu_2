@@ -17,7 +17,9 @@ final class ChatViewController: ParentViewController {
     @IBOutlet private weak var sendButton: UIButton!
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var inputContainerView: UIView!
+    @IBOutlet private weak var uploadImageButton: UIBarButtonItem!
     
+    private var sizingCell: ChatMessageTableViewCell?
     private var dataArray: [ChatMessage] = []
     private var chatId = ""
     
@@ -28,8 +30,10 @@ final class ChatViewController: ParentViewController {
         
         tableView.register(UINib(nibName: "\(ChatMessageTableViewCell.self)", bundle: nil), forCellReuseIdentifier: ChatMessageTableViewCell.id)
         tableView.register(UINib(nibName: "\(LoggedUserChatMessageTableViewCell.self)", bundle: nil), forCellReuseIdentifier: LoggedUserChatMessageTableViewCell.id)
+        sizingCell = tableView.dequeueReusableCell(withIdentifier: ChatMessageTableViewCell.id) as? ChatMessageTableViewCell
         
         navigationItem.title = "Chat"
+        uploadImageButton.title = "Upload image"
         backButton.title = "Close"
         sendButton.setTitle("Send", for: .normal)
 
@@ -74,13 +78,51 @@ final class ChatViewController: ParentViewController {
             }
             
             weakSelf.dataArray = response
-                .flatMap({ (_, value) -> ChatMessage? in
-                    return ChatMessage(dictionary: value)
-                })
+                .flatMap({ (_, value) -> ChatMessage? in ChatMessage(dictionary: value) })
                 .sorted(by: { $0.timestamp < $1.timestamp })
             
             weakSelf.tableView.reloadData()
         }
+    }
+    
+    @IBAction func uploadImageTapped(_ sender: Any) {
+        let actionSheetVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let openGalleryAction = UIAlertAction(
+            title: "Gallery",
+            style: .default,
+            handler: { [weak self] (action) in
+                guard let weakSelf = self else {
+                    return
+                }
+                
+                let pickerController = UIImagePickerController()
+                pickerController.sourceType = .photoLibrary
+                pickerController.delegate = weakSelf
+                weakSelf.present(pickerController, animated: true, completion: nil)
+            }
+        )
+        actionSheetVC.addAction(openGalleryAction)
+        
+        let openCamera = UIAlertAction(
+            title: "Camera",
+            style: .default,
+            handler: { [weak self] (action) in
+                guard let weakSelf = self else {
+                    return
+                }
+                
+                let pickerController = UIImagePickerController()
+                pickerController.sourceType = .camera
+                pickerController.delegate = weakSelf
+                weakSelf.present(pickerController, animated: true, completion: nil)
+            }
+        )
+        actionSheetVC.addAction(openCamera)
+        
+        actionSheetVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(actionSheetVC, animated: true, completion: nil)
     }
     
     @IBAction func backTapped(_ sender: Any) {
@@ -98,7 +140,28 @@ final class ChatViewController: ParentViewController {
 }
 
 extension ChatViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return calculateHeightForIndexPath(indexPath)
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return calculateHeightForIndexPath(indexPath)
+    }
+    
+    private func calculateHeightForIndexPath(_ indexPath: IndexPath) -> CGFloat {
+        let message = dataArray[indexPath.row]
+        
+        if message.rowHeight == 0 {
+            guard let sizingCellUnwrapped = sizingCell else {
+                return 0
+            }
+            
+            sizingCellUnwrapped.setupForChatMessage(message)
+            message.rowHeight = sizingCellUnwrapped.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        }
+        
+        return message.rowHeight
+    }
 }
 
 extension ChatViewController: UITableViewDataSource {
@@ -125,6 +188,21 @@ extension ChatViewController: UITableViewDataSource {
             chatMessageCell.setupForChatMessage(chatMessage)
             return chatMessageCell
         }
+    }
+}
+
+extension ChatViewController: UINavigationControllerDelegate {
+    
+}
+
+extension ChatViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
+        
+        Api.sendChatMessageWith(image: pickedImage, receiver: email, inChat: chatId)
+        dismiss(animated: true, completion: nil)
     }
 }
 
