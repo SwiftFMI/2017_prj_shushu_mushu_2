@@ -34,8 +34,8 @@ final class ChatViewController: ParentViewController {
         tableView.register(UINib(nibName: "\(LoggedUserChatMessageTableViewCell.self)", bundle: nil), forCellReuseIdentifier: LoggedUserChatMessageTableViewCell.id)
         sizingCell = tableView.dequeueReusableCell(withIdentifier: ChatMessageTableViewCell.id) as? ChatMessageTableViewCell
         
-        navigationItem.title = "Chat"
-        uploadImageButton.title = "Upload image"
+        navigationItem.title = email
+        uploadImageButton.title = "Gallery"
         backButton.title = "Close"
         sendButton.setTitle("Send", for: .normal)
 

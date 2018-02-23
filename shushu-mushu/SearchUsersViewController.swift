@@ -66,22 +66,36 @@ class SearchUsersViewController: ParentViewController, UITableViewDataSource, UI
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserCell
+        let user = userAtIndexPath(indexPath)
+        
         if(searchActive){
-            let found = filtered[indexPath.row]
-            cell.textLabel?.text = found.name
-            cell.detailTextLabel?.text = found.email
-            if let profileImageUrl = found.profileImageUrl {
+            cell.textLabel?.text = user.name
+            cell.detailTextLabel?.text = user.email
+            if let profileImageUrl = user.profileImageUrl {
                 cell.profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
-            }
-            else {
+            } else {
                 cell.profileImageView.image = UIImage(named: "default-user-image")
             }
         } else {
-            let user = users[indexPath.row]
             cell.textLabel?.text = user.name
             cell.detailTextLabel?.text = user.email
         }
-        return cell;
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let email = userAtIndexPath(indexPath).email else {
+            return
+        }
+        
+        presentChatViewController(userEmail: email)
+    }
+    
+    private func userAtIndexPath(_ indexPath: IndexPath) -> User {
+        return searchActive ? filtered[indexPath.row] : users[indexPath.row]
     }
     
     override func viewDidLoad() {

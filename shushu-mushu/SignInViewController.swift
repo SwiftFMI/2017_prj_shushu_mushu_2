@@ -24,6 +24,8 @@ class SignInViewController: LoginParentViewController {
             
             self.present(alertController, animated: true, completion: nil)
         } else {
+            hideKeyboard()
+            
             Auth.auth().signIn(withEmail: self.usernameTextField.text!, password: self.passwordTextField.text!) { (user, error) in
                 if error == nil {
                     print("You have successfully logged in!")
