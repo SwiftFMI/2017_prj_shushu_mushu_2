@@ -156,6 +156,7 @@ extension ChatViewController: UITableViewDelegate {
                 return 0
             }
             
+            sizingCellUnwrapped.prepareForReuse()
             sizingCellUnwrapped.setupForChatMessage(message)
             message.rowHeight = sizingCellUnwrapped.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
         }
