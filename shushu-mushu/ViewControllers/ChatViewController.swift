@@ -48,7 +48,6 @@ final class ChatViewController: ParentViewController {
         }
         
         chatId = email.combineWithEmailToCreateChatId(email: loggedUserEmail)
-        chatId.encodeChatId()
     }
     
     private func clearInputText() {
@@ -56,7 +55,7 @@ final class ChatViewController: ParentViewController {
     }
     
     private func fetchChatMessages() {
-        Database.database().reference().child("chats/\(chatId)/messages").observe(.value) { [weak self] (snapshot) in
+        Database.database().reference().child("chats/\(chatId.encodedFirebaseKey)/messages").observe(.value) { [weak self] (snapshot) in
             guard let weakSelf = self else {
                 return
             }
@@ -80,17 +79,11 @@ final class ChatViewController: ParentViewController {
     }
     
     @IBAction func sendButtonTapped(_ sender: Any) {
-        guard !textView.text.isEmpty, let loggedUserEmail = Auth.auth().currentUser?.email else {
+        guard !textView.text.isEmpty else {
             return
         }
         
-        let message: [String: Any] = [
-            "sender": loggedUserEmail,
-            "text": textView.text,
-            "dateCreated": ServerValue.timestamp()
-        ]
-        
-        Database.database().reference().child("chats/\(chatId)/messages").childByAutoId().setValue(message)
+        Api.sendChatMessageWith(text: textView.text, receiver: email, inChat: chatId)
         clearInputText()
     }
 }

@@ -14,7 +14,7 @@ extension String {
         return email < self ? "\(email)+\(self)" : "\(self)+\(email)"
     }
     
-    mutating func encodeChatId() {
-        self = self.replacingOccurrences(of: ".", with: "%2E")
+    var encodedFirebaseKey: String {
+        return self.replacingOccurrences(of: ".", with: "%2E")
     }
 }
