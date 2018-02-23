@@ -68,17 +68,12 @@ final class SearchUsersViewController: ParentViewController, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserCell
         let user = userAtIndexPath(indexPath)
         
-        if(searchActive){
-            cell.textLabel?.text = user.name
-            cell.detailTextLabel?.text = user.email
-            if let profileImageUrl = user.profileImageUrl {
-                cell.profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
-            } else {
-                cell.profileImageView.image = UIImage(named: "default-user-image")
-            }
+        cell.textLabel?.text = user.name
+        cell.detailTextLabel?.text = user.email
+        if let profileImageUrl = user.profileImageUrl {
+            cell.profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
         } else {
-            cell.textLabel?.text = user.name
-            cell.detailTextLabel?.text = user.email
+            cell.profileImageView.image = UIImage(named: "default-user-image")
         }
         
         return cell
