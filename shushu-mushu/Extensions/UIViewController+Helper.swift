@@ -23,6 +23,13 @@ extension UIViewController {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
     }
     
+    func makeNavigationBarTransparent() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+    }
+    
     // MARK: - Navigation
     func pushEditProfileVC() {
         guard let editProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileViewControllerId") as? EditProfileViewController else {

@@ -79,7 +79,9 @@ class SignInViewController: LoginParentViewController {
         
         if Auth.auth().currentUser != nil {
             switchToHome()
+            
+        } else {
+            makeNavigationBarTransparent()
         }
-        // Do any additional setup after loading the view.
     }
 }

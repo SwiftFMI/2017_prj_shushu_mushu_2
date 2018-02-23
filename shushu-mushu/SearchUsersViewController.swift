@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SearchUsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class SearchUsersViewController: ParentViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -102,7 +102,6 @@ class SearchUsersViewController: UIViewController, UITableViewDataSource, UITabl
         return cell;
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -111,21 +110,4 @@ class SearchUsersViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         fetchUser()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
