@@ -19,6 +19,8 @@ final class ChatViewController: ParentViewController {
     @IBOutlet private weak var inputContainerView: UIView!
     @IBOutlet private weak var uploadImageButton: UIBarButtonItem!
     
+    @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
+    
     private var sizingCell: ChatMessageTableViewCell?
     private var dataArray: [ChatMessage] = []
     private var chatId = ""
@@ -39,6 +41,9 @@ final class ChatViewController: ParentViewController {
 
         updateTableViewBottomInset()
         generateChatId()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,7 +66,7 @@ final class ChatViewController: ParentViewController {
     }
     
     private func updateTableViewBottomInset() {
-        let bottomInset = inputContainerView.frame.size.height
+        let bottomInset = inputContainerView.frame.size.height + inputContainerBottomConstraint.constant
         
         tableView.contentInset.bottom = bottomInset
         tableView.scrollIndicatorInsets.bottom = bottomInset
@@ -86,6 +91,8 @@ final class ChatViewController: ParentViewController {
     }
     
     @IBAction func uploadImageTapped(_ sender: Any) {
+        hideKeyboard()
+        
         let actionSheetVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let openGalleryAction = UIAlertAction(
@@ -136,6 +143,33 @@ final class ChatViewController: ParentViewController {
         
         Api.sendChatMessageWith(text: textView.text, receiver: email, inChat: chatId)
         clearInputText()
+        hideKeyboard()
+    }
+    
+    private func setInputViewBottomConstraint(_ value: CGFloat, animated: Bool) {
+        inputContainerBottomConstraint.constant = value
+        updateTableViewBottomInset()
+        
+        if animated {
+            UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                self?.view.layoutIfNeeded()
+            })
+        } else {
+            view.layoutIfNeeded()
+        }
+    }
+    
+    // MARK: - Notifications
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        guard let keyboardSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect else {
+            return
+        }
+        
+        setInputViewBottomConstraint(keyboardSize.size.height, animated: true)
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        setInputViewBottomConstraint(0, animated: true)
     }
 }
 

@@ -828,6 +828,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="SZ8-RO-III" id="b4m-G6-O42"/>
+                        <outlet property="inputContainerBottomConstraint" destination="ode-te-8tt" id="S9O-ML-kJ4"/>
                         <outlet property="inputContainerView" destination="WFV-Bc-neB" id="daD-j7-4G9"/>
                         <outlet property="sendButton" destination="wMT-r0-WVp" id="mxF-g5-ITd"/>
                         <outlet property="tableView" destination="rZU-0v-qth" id="26v-YW-eOb"/>

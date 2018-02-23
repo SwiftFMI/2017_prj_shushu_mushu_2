@@ -19,6 +19,10 @@ extension UIViewController {
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    func hideKeyboard(){
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+    }
+    
     // MARK: - Navigation
     func pushEditProfileVC() {
         guard let editProfileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfileViewControllerId") as? EditProfileViewController else {
