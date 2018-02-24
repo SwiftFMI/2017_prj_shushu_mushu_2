@@ -26,6 +26,7 @@
 		85728226203E1B3F0003D4E8 /* UIButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85728225203E1B3F0003D4E8 /* UIButton+Helper.swift */; };
 		85728228203E1C8E0003D4E8 /* UIImageView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85728227203E1C8E0003D4E8 /* UIImageView+Helper.swift */; };
 		8572822A203E1EA90003D4E8 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85728229203E1EA90003D4E8 /* MessagesViewController.swift */; };
+		85771BF22041727700D733EF /* TimeInterval+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85771BF12041727700D733EF /* TimeInterval+Helper.swift */; };
 		85866C73203F483900C79F96 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85866C72203F483900C79F96 /* ChatViewController.swift */; };
 		85866C77203F5B1C00C79F96 /* String+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85866C76203F5B1C00C79F96 /* String+Helper.swift */; };
 		85866C79203F5DA200C79F96 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85866C78203F5DA200C79F96 /* ChatMessage.swift */; };
@@ -91,6 +92,7 @@
 		85728225203E1B3F0003D4E8 /* UIButton+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Helper.swift"; sourceTree = "<group>"; };
 		85728227203E1C8E0003D4E8 /* UIImageView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helper.swift"; sourceTree = "<group>"; };
 		85728229203E1EA90003D4E8 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		85771BF12041727700D733EF /* TimeInterval+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Helper.swift"; sourceTree = "<group>"; };
 		85866C72203F483900C79F96 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		85866C76203F5B1C00C79F96 /* String+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Helper.swift"; sourceTree = "<group>"; };
 		85866C78203F5DA200C79F96 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				85728225203E1B3F0003D4E8 /* UIButton+Helper.swift */,
 				85728227203E1C8E0003D4E8 /* UIImageView+Helper.swift */,
 				85866C76203F5B1C00C79F96 /* String+Helper.swift */,
+				85771BF12041727700D733EF /* TimeInterval+Helper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				8551B4FF2040724900B00B77 /* SignUpWithPhoneViewController.swift in Sources */,
 				8551B507204072AF00B00B77 /* AllUsersViewController.swift in Sources */,
 				8551B50B204072AF00B00B77 /* SearchUsersViewController.swift in Sources */,
+				85771BF22041727700D733EF /* TimeInterval+Helper.swift in Sources */,
 				8551B50A204072AF00B00B77 /* NearbyUsersViewController.swift in Sources */,
 				85866C862040057F00C79F96 /* ChatTableViewCell.swift in Sources */,
 				8551B50E20407E9F00B00B77 /* UserManager.swift in Sources */,

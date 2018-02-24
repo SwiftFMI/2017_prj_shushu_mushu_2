@@ -14,8 +14,10 @@ final class ChatTableViewCell: UITableViewCell {
     static let id = "ChatTableViewCell"
     
     @IBOutlet private weak var chatNameLabel: UILabel!
+    @IBOutlet private weak var lastMessageTimestampLabel: UILabel!
     
     func setupForChat(_ chat: Chat) {
         chatNameLabel.text = chat.partner
+        lastMessageTimestampLabel.text = "\(chat.lastMessageTimestamp.relativeTimeString)"
     }
 }

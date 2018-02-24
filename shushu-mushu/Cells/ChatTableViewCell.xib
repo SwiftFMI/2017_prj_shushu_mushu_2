@@ -20,22 +20,34 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aqw-bi-IwO">
-                        <rect key="frame" x="15" y="10" width="290" height="23"/>
+                        <rect key="frame" x="15" y="10" width="230" height="23"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trx-Gl-C3a">
+                        <rect key="frame" x="245" y="14" width="65" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="lmY-7r-6E9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Aqw-bi-IwO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Jeb-mu-KiP"/>
+                    <constraint firstItem="trx-Gl-C3a" firstAttribute="centerY" secondItem="Aqw-bi-IwO" secondAttribute="centerY" id="OoW-Fe-y3D"/>
                     <constraint firstItem="Aqw-bi-IwO" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RcZ-kA-cRY"/>
                     <constraint firstItem="Aqw-bi-IwO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eYp-WK-z54"/>
-                    <constraint firstItem="Aqw-bi-IwO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="s7q-I7-QlC"/>
+                    <constraint firstAttribute="trailing" secondItem="trx-Gl-C3a" secondAttribute="trailing" constant="10" id="lyU-Fp-FqJ"/>
+                    <constraint firstItem="trx-Gl-C3a" firstAttribute="leading" secondItem="Aqw-bi-IwO" secondAttribute="trailing" id="xTk-b6-0f5"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="chatNameLabel" destination="Aqw-bi-IwO" id="8kE-TD-1Vk"/>
+                <outlet property="lastMessageTimestampLabel" destination="trx-Gl-C3a" id="IHe-Ce-Nix"/>
             </connections>
         </tableViewCell>
     </objects>

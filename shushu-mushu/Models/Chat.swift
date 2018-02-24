@@ -18,6 +18,6 @@ struct Chat {
         }
         
         self.partner = partner
-        self.lastMessageTimestamp = timestamp
+        self.lastMessageTimestamp = timestamp / 1000
     }
 }
