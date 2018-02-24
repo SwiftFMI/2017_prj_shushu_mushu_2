@@ -117,11 +117,17 @@ final class EditProfileViewController: ParentViewController, UINavigationControl
         let user = Auth.auth().currentUser
         let uid = Auth.auth().currentUser?.uid
         Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
-            guard let weakSelf = self, let dictionary = snapshot.value as? [String: AnyObject], let photo = dictionary["profileImageUrl"] as? String, let url = URL(string: photo), let data = try? Data(contentsOf: url) else {
+            guard let weakSelf = self, let dictionary = snapshot.value as? [String: AnyObject] else {
                 return
             }
             
-            weakSelf.changedPhoto.image = UIImage(data: data)
+            if let name = dictionary["name"] as? String {
+                weakSelf.changedName.text = name
+            }
+            
+            if let photo = dictionary["profileImageUrl"] as? String {
+                weakSelf.changedPhoto.loadImageUsingCacheWithUrlString(photo)
+            }
         }, withCancel: nil)
         
         if UserManager.shared.isFacebookLogin {
@@ -137,12 +143,6 @@ final class EditProfileViewController: ParentViewController, UINavigationControl
         // Set default name and email
         changedEmail.isEnabled = false
         changedEmail.text = user?.email
-        changedName.text = user?.displayName
-        if user?.displayName == nil {
-            let del = "@"
-            var token = user?.email?.components(separatedBy: del)
-            changedName.text = token?[0]
-        }
         changedPhoto.layer.cornerRadius = changedPhoto.frame.size.width / 2
         changedPhoto.clipsToBounds = true
     }
