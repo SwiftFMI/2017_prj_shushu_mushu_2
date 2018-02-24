@@ -25,7 +25,7 @@ final class SignInViewController: LoginParentViewController {
         }
     }
     
-    @IBAction func signIn(_ sender: UIButton) {
+    @IBAction func signIn(_ sender: Any) {
         guard usernameTextField.text?.isEmpty == false && passwordTextField.text?.isEmpty == false else {
             showErrorAlert(message: "Please enter an email and password.")
             return
@@ -79,5 +79,19 @@ final class SignInViewController: LoginParentViewController {
                 weakSelf.switchToHome()
             })
         }
+    }
+}
+
+extension SignInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === usernameTextField {
+            passwordTextField.becomeFirstResponder()
+            
+        } else if textField === passwordTextField {
+            hideKeyboard()
+            signIn(self)
+        }
+        
+        return true
     }
 }
