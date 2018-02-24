@@ -37,21 +37,23 @@ final class ProfileViewController: ParentViewController {
         
         if let currentUser = Auth.auth().currentUser {
             let uid = Auth.auth().currentUser?.uid
-            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let dictionary = snapshot.value as? [String: AnyObject] {
-                    let photo = dictionary["profileImageUrl"] as? String
-                    if photo != nil {
-                        let url = URL(string: photo!)
-                        let data = try? Data(contentsOf: url!)
-                        self.profileImage.image = UIImage(data: data!)
-                    }
-                    self.userName.text = currentUser.displayName
-                    if currentUser.displayName == nil {
-                    self.userName.text = dictionary["name"] as? String
-                    }
-                    self.userEmail.text = dictionary["email"] as? String
+            Database.database().reference().child("users").child(uid!).observe(.value) { [weak self] (snapshot) in
+                guard let weakSelf = self else {
+                    return
                 }
-            }, withCancel: nil)
+                
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    
+                    if let photo = dictionary["profileImageUrl"] as? String {
+                        weakSelf.profileImage.loadImageUsingCacheWithUrlString(photo)
+                    }
+                    weakSelf.userName.text = currentUser.displayName
+                    if currentUser.displayName == nil {
+                        weakSelf.userName.text = dictionary["name"] as? String
+                    }
+                    weakSelf.userEmail.text = dictionary["email"] as? String
+                }
+            }
 
             if UserManager.shared.isFacebookLogin {
                 let photo = currentUser.photoURL?.absoluteString
